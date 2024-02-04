@@ -54,7 +54,7 @@ public class TestOrderCreate {
     public void testOrderCreateWithToken() {
         List<String> ingredients = Arrays.asList("61c0c5a71d1f82001bdaaa6d", "61c0c5a71d1f82001bdaaa6f");
         orderSteps.createOrderWithToken(accessToken, ingredients)
-                .statusCode(SC_OK).and().body("success", equalTo(true)).log();
+                .statusCode(SC_OK).and().body("success", equalTo(true));
     }
 
     @Test

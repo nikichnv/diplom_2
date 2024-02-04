@@ -28,8 +28,8 @@ public class TestUserLogin {
     @DisplayName("Авторизация пользователем")
     @Description("Проверка корректной авторизации пользователя")
     public void canLoginUser() {
-        ValidatableResponse response = userSteps.create(email, password, name).log().all();
-        ValidatableResponse responsea = userSteps.login(email, password).statusCode(SC_OK).and().body("success", equalTo(true)).log().all();
+        ValidatableResponse response = userSteps.create(email, password, name);
+        ValidatableResponse responsea = userSteps.login(email, password).statusCode(SC_OK).and().body("success", equalTo(true));
         accessToken = userSteps.getAccessToken(responsea);
     }
 

@@ -29,7 +29,7 @@ public class TestUserCreate {
     @Description("Создание пользователя с валидным телом запроса")
     public void canUserCreate() {
         ValidatableResponse response = userSteps.create(email, password, name);
-        response.assertThat().statusCode(SC_OK).and().body("success", equalTo(true)).log().all();
+        response.assertThat().statusCode(SC_OK).and().body("success", equalTo(true));
         accessToken = userSteps.getAccessToken(response);
     }
 
